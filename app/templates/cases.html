@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+    {% block bodyblock %}
+        <form method="post">
+            <h1>Find Similar Cases</h1>
+            <textarea rows="5" cols="20" name="summary" placeholder="Enter you case summary here" ></textarea>
+            <button type="submit" >Search</button>
+        </form>
+
+        {% if final_table is not none %}
+            {% for row in final_table['href'] %}
+                {{ row }}
+                <br>
+            {% endfor %}
+        {% endif %}
+    {% endblock %}
